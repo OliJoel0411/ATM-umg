@@ -28,8 +28,8 @@ public class ATM {
     public ATM(){
     // inicializar variables de instancia
     
-    usuarioAutenticado = true; // False, cuando el usuario no esta autenticado
-    noCuentaActual = 12345; // no hay numero de cuenta, cuando inicia el ATM
+    usuarioAutenticado = false; // False, cuando el usuario no esta autenticado
+    noCuentaActual = 0; // no hay numero de cuenta, cuando inicia el ATM
     pantalla = new Pantalla(); 
     teclado = new Teclado();
     dispensadorEfectivo = new DispensadorEfectivo();
@@ -51,6 +51,7 @@ public class ATM {
                 
                 pantalla.mostrarMensaje("Bienvenido");
                 pantalla.mostrarMensaje(" ");// un espacio vacio
+                autenticarUsuario();
                 
             }// fin while 02
             realizarTransacciones(); // ahora el usuario está autenticado

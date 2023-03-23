@@ -10,9 +10,10 @@ public class BaseDatosBanco {
     
     // Constructor
     public BaseDatosBanco(){
-        cuenta = new Cuenta[1];
+        cuenta = new Cuenta[2];
         
         cuenta[0] = new Cuenta(12345,54321,1000.0,1000.0);
+        cuenta[1] = new Cuenta(54321,12345,1000.0,2000.0);
         
         }// fin del constructor
     // obtiene el objeto Cuenta que contiene el número de cuenta especificado
@@ -29,7 +30,7 @@ public class BaseDatosBanco {
     // determina si el número de cuenta y el NIP especificados por el usuario coinciden
     public boolean autenticarUsuario( int numeroCuentaUsuario, int nipUsuario ){
         // trata de obtener la cuenta con el número de cuenta
-        Cuenta cuentaUsuario = obtenerCuenta( numeroCuentaUsuario );
+        Cuenta cuentaUsuario = obtenerCuenta(numeroCuentaUsuario);
         // si la cuenta existe, devuelve el resultado del método validarNIP de Cuenta
         if ( cuentaUsuario != null ){
             return cuentaUsuario.validarNip( nipUsuario );
